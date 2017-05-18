@@ -30,7 +30,7 @@
 	}, {
 		"Acute on Chronic": "maxCreatinine > 1.2 && prevMaxCreatinine > 1.2 && maxCreatinine > 1.5 * prevMaxCreatinine"
 	}, {
-		"Not otherwise specified": "maxCreatinine > 1.2"
+		"Not otherwise specified": "maxCreatinine > 1.2 && prevMaxCreatinine ==-1 "
 	}]
 }, {
 	"Pancytopenia": [{

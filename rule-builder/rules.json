@@ -44,7 +44,7 @@
 	"SIRS": [{
 		"SIRS due to non infectious process": "maxHR > 90  ||2 maxRespRate > 20  ||2 maxBands > 10  ||2  ( maxTemp < 36  || maxTemp > 38.3  )  ||2  ( minWBC < 4000  || minWBC > 12000  ) "
 	}, {
-		"Sepsis due to suspected/actual infection": "Due_to_non_infectious_process !=-1 "
+		"Sepsis due to suspected/actual infection": "SIRS_due_to_non_infectious_process !=-1 "
 	}]
 }, {
     "Obesity" : "bmi > 30"

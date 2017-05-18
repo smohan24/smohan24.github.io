@@ -22,6 +22,7 @@ var formatRule = function(rule, variables, labValuesDictionaryJson) {
 	splittedByOr = ruletmp.split(" or ");
 	var finalStrOr = [];
 	for(var i = 0; i < splittedByOr.length; i++) {
+		splittedByOr[i] = splittedByOr[i].split("or").join("any");
 		var splittedByAnd = splittedByOr[i].split(" and ");
 		var finalStrAnd = [];
 		for(var j = 0; j < splittedByAnd.length; j++) {
@@ -57,19 +58,14 @@ var formatRule = function(rule, variables, labValuesDictionaryJson) {
 				finalStrAnd.push(finalAnd.join(" "));
 			}
 		}
-		if(vars.indexOf('bmi') > -1) {
+		if(rule.indexOf('bmi') > -1) {
 			vars.push('height');
 			values.push(variables['height']);
 			vars.push('weight');
 			values.push(variables['weight']);
+			vars.push('bmi');
+			values.push((variables['weight'])/((variables['height']/100)*(variables['height']/100)));
 		}
-		if(vars.indexOf('malnutritionbmi') > -1) {
-			vars.push('maxheight');
-			values.push(variables['maxheight']);
-			vars.push('minweight');
-			values.push(variables['minweight']);
-		}
-		
 		
 		var mergedAnd = finalStrAnd.join(" and<br> ");
 		if(splittedByOr.length > 1 && splittedByAnd.length > 1)
@@ -115,10 +111,10 @@ var formatRule = function(rule, variables, labValuesDictionaryJson) {
 	
 	finalRule = finalRule + "|" + finalStrOr.join(" or<br> ");
 	if(finalRule.indexOf("==-1") != -1){
-		finalRule = finalRule.split("==-1").join("is not available");
+		finalRule = finalRule.split("==-1").join("is not present");
 	}
 	if(finalRule.indexOf("!=-1") != -1){
-		finalRule = finalRule.split("!=-1").join("is available");
+		finalRule = finalRule.split("!=-1").join("is present");
 	}
 	return finalRule;
 }

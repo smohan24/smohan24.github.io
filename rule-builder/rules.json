@@ -30,7 +30,7 @@
 	}, {
 		"Acute on Chronic": "maxCreatinine > 1.2 && prevMaxCreatinine > 1.2 && maxCreatinine > 1.5 * prevMaxCreatinine"
 	}, {
-		"Not otherwise specified": "maxCreatinine > 1.2  && prevMaxCreatinine ==-1 "
+		"Not otherwise specified": "maxCreatinine > 1.2"
 	}]
 }, {
 	"Pancytopenia": [{
@@ -42,21 +42,9 @@
 	}]
 }, {
 	"SIRS": [{
-		"Due to non infectious process": "maxHR > 90  ||2 maxRespRate > 20  ||2 maxBands > 10  ||2  ( maxTemp < 36  || maxTemp > 38.3  )  ||2  ( minWBC < 4000  || minWBC > 12000  ) "
+		"SIRS due to non infectious process": "maxHR > 90  ||2 maxRespRate > 20  ||2 maxBands > 10  ||2  ( maxTemp < 36  || maxTemp > 38.3  )  ||2  ( minWBC < 4000  || minWBC > 12000  ) "
 	}, {
-		"Due to suspected/actual infection": "Due_to_non_infectious_process !=-1 "
-	}]
-}, {
-	"SEPSIS": [{
-		"Severe Sepsis": "SIRS !=-1  &&  ( sysBP < 90  || maxCreatinine >= 2  || maxLacticAcid > 72  || minPLT < 100  || maxPTT > 60  || maxTotBil > 2  ) "
-	}, {
-		"Septic Shock": "SIRS !=-1  &&  ( maxLacticAcid > 40  || sysBP < 90  ) "
-	}]
-}, {
-	"Sepsis 2-5": [{
-		"SIRS": "( age >= 2 && age <= 5 ) && ( ( ( maxHR >= 140 || maxRespRate >= 22 || minWBC <= 6  || maxWBC >= 15.5  || maxBands > 10 ) && ( minTemp <= 36 || maxTemp >= 38.5 ) ) || ( ( maxHR >= 140  || maxRespRate >= 22  || maxBands >= 10 || minTemp <= 36 || maxTemp >= 38.5 ) && ( minWBC <= 6  || maxWBC >= 15.5  ) ) )"
-	}, {
-		"Septic Shock": "SIRS !=-1  && sysBP < 74 "
+		"Sepsis due to suspected/actual infection": "Due_to_non_infectious_process !=-1 "
 	}]
 }, {
     "Obesity" : "bmi > 30"

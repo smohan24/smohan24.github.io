@@ -108,7 +108,13 @@
                 { "Acute": "( ( ( minHb < lowHb ) || ( minHc < lowHc ) ) && ( ( prevMinHb > lowHb ) && ( prevMinHc > lowHc ) ) )"},
                 { "Anemic": "( ( ( minHb < lowHb ) || ( minHc < lowHc ) ) && ( ( prevMinHb ==-1 ) && ( prevMinHc ==-1 ) ) )"},
                 { "Chronic": "( ( ( minHb < lowHb ) || ( minHc < lowHc ) ) && ( ( prevMinHb < lowHb ) || ( prevMinHc < lowHc ) ) )"}
-              ]},                                                                                              
+              ]},   
+			{"My_Anemia1":[
+                { "Normal": " minHb > 2.5 * lowHb  &&  minHc > lowHc"},
+                { "Acute": "( ( ( minHb < lowHb ) || ( minHc < lowHc ) ) && ( ( prevMinHb > lowHb ) && ( prevMinHc > lowHc ) ) )"},
+                { "Anemic": "( ( ( minHb < lowHb ) || ( minHc < lowHc ) ) && ( ( prevMinHb ==-1 ) && ( prevMinHc ==-1 ) ) )"},
+                { "Chronic": "( ( ( minHb < lowHb ) || ( minHc < lowHc ) ) && ( ( prevMinHb < lowHb ) || ( prevMinHc < lowHc ) ) )"}
+              ]},  
                                                                                               
     {"Pancytopenia": [
                 {"Due to Chemotherapy" : "( ( minwbc < wbclow ) && ( minrbc < rbclow ) && ( minplt < pltlow ) )"},

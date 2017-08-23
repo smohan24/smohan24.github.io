@@ -14,7 +14,20 @@
 	}, {
 		"Normal": "minHb > lowHb && minHc > lowHc"
 	}]
-}, {
+}, 
+ {
+	"My_Anemia1": [{
+		"Acute": "prevMinHb > lowHb  && prevMinHc > lowHc  &&  ( minHb < lowHb  || minHc < lowHc  ) "
+	}, {
+		"Anemic": "( minHb < lowHb || minHc < lowHc ) && ( prevMinHb ==-1 && prevMinHc ==-1 )"
+	}, {
+		"Chronic": "( minHb < lowHb || minHc < lowHc ) && ( prevMinHb < lowHb || prevMinHc < lowHc )"
+	}, {
+		"Normal": "minHb > lowHb && minHc > lowHc"
+	}]
+},
+ 
+ {
 	"HyperCholesterolemia": "maxcholestrol > 200"
 }, {
 	"Hypertension": [{
